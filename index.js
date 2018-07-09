@@ -6,5 +6,22 @@
  * code.
  */
 
+import englishToBrailleLiteralSet from './english-to-braille.js';
 
-const x = 20;
+const englishToBrailleMap = new Map();
+const englishToBrailleLiteralSetIterator = englishToBrailleLiteralSet.entries();
+
+for (const item of englishToBrailleLiteralSetIterator) {
+  englishToBrailleMap.set(item[1][0], item[1][1]);
+}
+
+function convertEnglishToBraille() {
+  const inputText = document.getElementById('sourceLangText').value;
+  const outputText = [];
+  for (let i = 0; i < inputText.length; i += 1) {
+    outputText.push(englishToBrailleMap.get(inputText.charAt(i)));
+  }
+  document.getElementById('targetLangText').innerHTML = outputText.join('');
+}
+
+document.getElementById('btnConvertEnglishToBraille').addEventListener('click', convertEnglishToBraille);
