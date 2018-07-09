@@ -15,7 +15,7 @@ englishToBrailleLiteralSet.forEach((element) => {
 });
 
 function convertEnglishToBraille() {
-  const inputText = document.getElementById('sourceLangTextError').value;
+  const inputText = document.getElementById('sourceLangText').value;
   const outputText = [];
   for (let i = 0; i < inputText.length; i += 1) {
     outputText.push(englishToBrailleMap.get(inputText.charAt(i)));
