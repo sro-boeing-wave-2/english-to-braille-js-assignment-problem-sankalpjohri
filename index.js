@@ -9,11 +9,10 @@
 import englishToBrailleLiteralSet from './english-to-braille.js';
 
 const englishToBrailleMap = new Map();
-const englishToBrailleLiteralSetIterator = englishToBrailleLiteralSet.entries();
 
-for (const item of englishToBrailleLiteralSetIterator) {
-  englishToBrailleMap.set(item[1][0], item[1][1]);
-}
+englishToBrailleLiteralSet.forEach((element) => {
+  englishToBrailleMap.set(element[0], element[1]);
+});
 
 function convertEnglishToBraille() {
   const inputText = document.getElementById('sourceLangText').value;
