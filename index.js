@@ -18,7 +18,7 @@ function convertEnglishToBraille() {
   // Run a loop to go over the input string andd find it's corresponding character in braille.
   const outputText = inputText.split('').map(c => englishToBrailleMap.get(c)).join('');
 
-  // Set the converted text as inner html of the output
+  // Set the converted text as inner html of the output.
   document.getElementById('targetLangText').innerHTML = outputText;
 }
 
